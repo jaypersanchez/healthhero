@@ -112,6 +112,50 @@ export function useChainId() {
     return { chainId }
 }
 
+
+const injectedConnector = new InjectedConnector({supportedChainIds: [80001, 137],})
+
+export const connect = async (activate) => {
+    try {
+            activate(injectedConnector, (e) => {
+                if (e.message.includes("No Ethereum provider")) {
+                    helperToast.error(<div>
+                        Could not find a wallet to connect to.<br/>
+                        <a href="https://metamask.io" target="_blank" rel="noopener noreferrer">Add a wallet</a> to start using the app.
+                    </div>)
+                    return
+                }
+                if (e instanceof UnsupportedChainIdError) {
+                    helperToast.error(
+                    <div>
+                        <div>Your wallet is not connected to {getChainName(DEFAULT_CHAIN_ID)}.</div><br/>
+                        <div className="clickable underline margin-bottom" onClick={() => switchNetwork(DEFAULT_CHAIN_ID)}>
+                            Switch to {getChainName(DEFAULT_CHAIN_ID)}
+                        </div>
+                        <div className="clickable underline" onClick={() => switchNetwork(DEFAULT_CHAIN_ID)}>
+                            Add {getChainName(DEFAULT_CHAIN_ID)}
+                        </div>
+                    </div>)
+                    return
+                }
+                helperToast.error(e.toString())
+            })
+    } catch (exception) {
+        console.log(exception);
+    }
+};
+
+export const disconnect = async (deactivate) => {
+    try {
+        deactivate();
+    } catch (exception) {
+        console.log(exception);
+    }
+};
+
+
+
+
 export const getConnectWalletHandler = (activate) => {
     console.log("activate", activate)
     console.log(`Default Network ${DEFAULT_CHAIN_ID}`)

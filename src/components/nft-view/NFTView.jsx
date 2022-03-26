@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-expressions */
 import React from "react";
 import {useWeb3React} from '@web3-react/core'
+import { Web3Provider } from '@ethersproject/providers'
+import { InjectedConnector } from '@web3-react/injected-connector'
 import {useEffect, useState} from 'react';
 import PropTypes from "prop-types";
 import Web3 from "web3";
@@ -21,7 +23,8 @@ import {
     getContract,
     CHAIN_ID,
     getWeb3,
-    getConnectWalletHandler,
+    connect,
+    disconnect
 } from "../../utils/Helpers.js";
 
 // images
@@ -50,12 +53,21 @@ function getParsedData(web3, allInfos) {
 }
 
 function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
-    const {chainId} = useChainId()
-    const {active, account, activate} = useWeb3React()
-    // const { account, active, activateMetaMask } = useMetaMaskConnect();
+    
+    const {chainId, active, account, activate, connector, deactivate} = useWeb3React()
+
     useEffect(() => {
         getBalanceOf()
-    }, [active])
+    }, [])
+
+    const connectWallet = async () => {
+        connect(activate)
+        console.log("active", active)
+    }
+
+    const disConnectWallet = async () => {
+        disconnect(deactivate)
+    }
 
     const getBalanceOf = async () => {
         try {
@@ -64,9 +76,7 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
             const accounts = await web3.eth.getAccounts();
             const creatureAccessoryFactoryToken = new web3.eth.Contract(CreatureAccessoryFactory, getContract(CHAIN_ID, "CreatureAccessoryFactory"));
             const tokenIds = await creatureAccessoryFactoryToken.methods.getTokenIds().call()
-            console.log("tokenIds: ", tokenIds)
             const mintData = await creatureAccessoryFactoryToken.methods.getMintedData().call()
-            console.log("mintData: ", mintData)
             const mintDataList = []
             for (let i = 0; i < mintData.length; i++) {
                 mintDataList.push(JSON.parse(web3.utils.toAscii(mintData[i])))
@@ -115,10 +125,6 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                 var max = tokenIds.reduce(function(a, b) {
                     return Math.max(parseInt(a), parseInt(b));
                 });
-                
-                console.log("max: ", max)
-
-                
                 console.log(`Params 7 :: ${env.POLYGON_TEST_CREATUREACCESSORYFACTORY} :: 1 :: ${img} :: ${hexMetaData} :: ${acctaddress}`);
                 let txn = await creatureAccessoryFactoryToken.methods.mint(max + 1, acctaddress, 1, img, hexMetaData).send({
                                                                             from: acctaddress,
@@ -126,15 +132,14 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                                                                         }
                                                                     )
                 console.log(`txn ${JSON.stringify(txn)}`)
-
-            
         } catch (e) {
             console.log("e: ", e.toString())
         }
     }
 
+   
+
     if (!active) {
-        const connectWallet = getConnectWalletHandler(activate)
 
         return (
             <>
@@ -145,7 +150,7 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                             <span className="icon-NFT-cross"></span>
                             Close
                         </button>
-                        <img src={img || nft1} alt="img4" className="img-fluid"/>
+                        <img src={img || nft1} alt="img4" className="img-fluid mt-4"/>
                         <h5 className="clr-blue mb-3 mt-16">token id 0003</h5>
                         <h2 className="clr-red mb-3">
                             {name || 'Go!Bot'}
@@ -155,6 +160,31 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                         <button className="btn-large btn-blue mb-24" onClick={() => mintToken()}>
                             Mint Token
                         </button>
+
+                        {/* <div className='flex flex-row items-center justify-center w-full m-4'>
+                            <button
+                            onClick={connectWallet}
+                            className='py-2 text-sm font-bold text-white rounded-lg w-40 bg-primary hover:bg-primarydarkdark'
+                            >
+                            Connect to MetaMask
+                            </button>
+                            <div className='p-2'>
+                            {active ? (
+                                <span>
+                                Connected with <b>{account}</b>
+                                </span>
+                            ) : (
+                                <span>Not connected</span>
+                            )}
+                            </div>
+                            <button
+                            onClick={disconnect}
+                            className='py-2 text-sm font-bold text-white rounded-lg w-40 bg-primary hover:bg-primarydarkdark'
+                            >
+                            Disconnect
+                            </button>
+                        </div> */}
+                        {active}
                         {active ? (
                             <button disabled className="badge-btn badge-btn-green mb-24">
                                 <span className="icon-success"></span>
@@ -456,7 +486,11 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                 </div>
             </>
         );
-    } else {
+    } else if (active && chainId == CHAIN_ID){
+
+        console.log("active", active)
+        console.log("chainId", chainId)
+
         return (
             <>
                 <div id="nft-view" className="nft-view position-relative">
@@ -466,7 +500,7 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                             <span className="icon-NFT-cross"></span>
                             Close
                         </button>
-                        <img src={img || nft1} alt="img4" className="img-fluid"/>
+                        <img src={img || nft1} alt="img4" className="img-fluid mt-4"/>
                         <h5 className="clr-blue mb-3 mt-16">token id 0003</h5>
                         <h2 className="clr-red mb-3">
                             {name || 'Go!Bot'}
@@ -474,7 +508,7 @@ function NFT({onCloseNftView = () => null, img, xPos, yPos, name, setList}) {
                         <p>This NFT hasn't been claimed yet so click mint to buy it now!</p>
 
                         <button className="btn-large btn-blue mb-24" onClick={() => mintToken()}>
-                            
+                            Mint Token
                         </button>
                         {active ? (
                             <button disabled className="badge-btn badge-btn-green mb-24">
