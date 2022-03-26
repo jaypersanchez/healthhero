@@ -1,0 +1,720 @@
+// Variables
+@import 'variables';
+
+// Font Family
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Fonts
+@font-face {
+  font-family: 'icomoon';
+  src: url('../../assets/fonts/icomoon.eot?kaobr4');
+  src: url('../../assets/fonts/icomoon.eot?kaobr4#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/icomoon.ttf?kaobr4') format('truetype'),
+    url('../../assets/fonts/icomoon.woff?kaobr4') format('woff'),
+    url('../../assets/fonts/icomoon.svg?kaobr4#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 2.4rem;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Background & colors
+.bg-white {
+  background-color: $white;
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-grey {
+  background-color: $grey;
+}
+.bg-dark {
+  background-color: $dark;
+}
+.bg-yellow {
+  background-color: $yellow;
+}
+.bg-green {
+  background-color: $green;
+}
+.bg-darkblue {
+  background-color: $darkblue;
+}
+.bg-blue {
+  background-color: $blue;
+}
+.bg-red {
+  background-color: $red;
+}
+
+.clr-white {
+  color: $white;
+}
+.clr-black {
+  color: $black;
+}
+.clr-grey {
+  color: $grey;
+}
+.clr-dark {
+  color: $dark;
+}
+.clr-yellow {
+  color: $yellow;
+}
+.clr-green {
+  color: $green;
+}
+.clr-darkblue {
+  color: $darkblue;
+}
+.clr-blue {
+  color: $blue;
+}
+.clr-red {
+  color: $red;
+}
+
+// Margins
+.mt-12 {
+  margin-top: 12px;
+}
+.mt-16 {
+  margin-top: 16px;
+}
+.mt-18 {
+  margin-top: 18px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-24 {
+  margin-top: 24px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-32 {
+  margin-top: 32px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+.mt-70 {
+  margin-top: 70px;
+}
+.mt-80 {
+  margin-top: 80px;
+}
+.mt-90 {
+  margin-top: 90px;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+.mb-18 {
+  margin-bottom: 18px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-24 {
+  margin-bottom: 24px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-32 {
+  margin-bottom: 32px;
+}
+.mb-40 {
+  margin-bottom: 40px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.mb-60 {
+  margin-bottom: 60px;
+}
+.mb-70 {
+  margin-bottom: 70px;
+}
+.mb-80 {
+  margin-bottom: 80px;
+}
+.mb-90 {
+  margin-bottom: 90px;
+}
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.mr-19 {
+  margin-right: 19px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+
+// Paddings
+.pt-16 {
+  padding-top: 16px;
+}
+.pt-18 {
+  padding-top: 18px;
+}
+.pt-20 {
+  padding-top: 20px;
+}
+.pt-24 {
+  padding-top: 24px;
+}
+.pt-30 {
+  padding-top: 30px;
+}
+.pt-32 {
+  padding-top: 32px;
+}
+.pt-40 {
+  padding-top: 40px;
+}
+.pt-50 {
+  padding-top: 50px;
+}
+.pt-60 {
+  padding-top: 60px;
+}
+.pt-70 {
+  padding-top: 70px;
+}
+.pt-80 {
+  padding-top: 80px;
+}
+.pt-90 {
+  padding-top: 90px;
+}
+.pt-100 {
+  padding-top: 100px;
+}
+
+.pb-16 {
+  padding-bottom: 16px;
+}
+.pb-18 {
+  padding-bottom: 18px;
+}
+.pb-20 {
+  padding-bottom: 20px;
+}
+.pb-24 {
+  padding-bottom: 24px;
+}
+.pb-30 {
+  padding-bottom: 30px;
+}
+.pb-32 {
+  padding-bottom: 32px;
+}
+.pb-40 {
+  padding-bottom: 40px;
+}
+.pb-50 {
+  padding-bottom: 50px;
+}
+.pb-60 {
+  padding-bottom: 60px;
+}
+.pb-70 {
+  padding-bottom: 70px;
+}
+.pb-80 {
+  padding-bottom: 80px;
+}
+.pb-90 {
+  padding-bottom: 90px;
+}
+.pb-100 {
+  padding-bottom: 100px;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+//font sizes
+.fs-12 {
+  font-size: 1.2rem;
+}
+.fs-14 {
+  font-size: 1.4rem;
+}
+.fs-18 {
+  font-size: 1.8rem;
+}
+.fs-24 {
+  font-size: 2.4rem;
+}
+.fs-32 {
+  font-size: 3.2rem;
+}
+
+[class^='icon-'] {
+  &.clr-yellow {
+    &::before {
+      color: $yellow;
+    }
+  }
+  &.clr-blue {
+    &::before {
+      color: $blue;
+    }
+  }
+}
+
+// min-Max
+.w-100 {
+  width: 100%;
+}
+.minvh-100 {
+  min-height: 100vh;
+}
+.min-vh-row {
+  min-height: calc(100vh - 8rem);
+}
+.max-170 {
+  max-width: 17rem;
+}
+.max-300 {
+  max-width: 30rem;
+}
+.max-350 {
+  max-width: 30.5rem;
+}
+.max-400 {
+  max-width: 40rem;
+}
+.max-500 {
+  max-width: 50rem;
+}
+.max-600 {
+  max-width: 60rem;
+}
+.max-700 {
+  max-width: 70rem;
+}
+.max-800 {
+  max-width: 80rem;
+}
+.max-1920 {
+  max-width: 192rem;
+  margin: auto;
+}
+.max-980 {
+  max-width: 98rem;
+}
+
+.mwidth_605 {
+  max-width: 60.5rem;
+  width: 100%;
+}
+.minvh-100 {
+  min-height: 100vh;
+}
+.minh-350 {
+  min-height: 35rem;
+}
+.minh-265 {
+  min-height: 26.5rem;
+}
+.minh-500 {
+  min-height: 50rem;
+}
+.minh-row {
+  min-height: calc(100vh - 3.2rem);
+}
+.mwidth-125 {
+  min-width: 125px;
+}
+.mwidth-31 {
+  max-width: 310px;
+  width: 100%;
+}
+.mwidth-40 {
+  max-width: 400px;
+  width: 100%;
+}
+.mwdith-500 {
+  max-width: 500px;
+  width: 100%;
+}
+.mwidth-42 {
+  max-width: 42rem;
+  width: 100%;
+}
+.mwdith-1366 {
+  max-width: 1366px;
+  width: 100%;
+}
+.mwdith-578 {
+  max-width: 578px;
+  width: 100%;
+}
+.mwidth-76 {
+  max-width: 76rem;
+  width: 100%;
+}
+
+// Default Common
+.cur-pointer {
+  cursor: pointer;
+}
+.toRight {
+  text-align: right;
+}
+hr {
+  background-color: #e0e0e0;
+  opacity: 1;
+}
+button,
+a,
+li,
+span,
+i {
+  transition: all 0.5s;
+}
+.scale-h {
+  transition: 0.3s all;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+// Common Components
+html {
+  font-size: 10px;
+  body {
+    color: $white;
+    background-color: $black;
+    font-family: $primary-family;
+    font-size: $primary-fs;
+    font-weight: 400;
+    line-height: 2.2rem;
+    min-height: 100vh;
+    margin: 0;
+    max-width: 100%;
+
+    a {
+      color: $white;
+      outline: none !important;
+      text-decoration: none;
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    // Headings
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 0;
+    }
+    .h1,
+    h1 {
+      font-size: $h1-font-size;
+      font-weight: 700;
+      line-height: 4rem;
+    }
+    .h2,
+    h2 {
+      font-size: $h2-font-size;
+      font-weight: 700;
+      line-height: 3rem;
+    }
+    .h3,
+    h3 {
+      font-size: $h3-font-size;
+      font-weight: 700;
+      line-height: 2.6rem;
+    }
+    .h4,
+    h4 {
+      font-size: $h4-font-size;
+      font-weight: 700;
+      line-height: 2.2rem;
+    }
+    .h5,
+    h5 {
+      font-size: $h5-font-size;
+      font-weight: 600;
+      line-height: 1.6rem;
+    }
+    .h6,
+    h6 {
+      font-size: $h6-font-size;
+      font-weight: 500;
+      line-height: 1.4rem;
+    }
+
+    .btn {
+      border-radius: 0.9rem;
+      box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.12);
+      text-align: center;
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.2rem;
+      border: none !important;
+      &:hover {
+        color: $white;
+        background-color: $darkblue;
+      }
+    }
+    .btn-large {
+      background: $blue;
+      border-radius: 0.9rem;
+      box-shadow: 6px 6px 24px rgba(0, 0, 0, 0.12);
+      font-weight: bold;
+      text-align: center;
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 2.2rem;
+      padding: 1.7rem 2rem;
+      border: none !important;
+      width: 100%;
+      display: inline-block;
+
+      &:hover {
+        color: $white;
+        background-color: $ctahover;
+      }
+    }
+    .btn.disabled {
+      opacity: 0.7;
+    }
+    .down-arrow-btn {
+      color: $blue;
+      background: transparent;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      margin: 2rem auto auto auto;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+      span {
+        font-size: 1.6rem;
+        margin-left: 0.8rem;
+      }
+    }
+    .badge-btn {
+      color: $yellow;
+      background: transparent;
+      border: 1px solid $yellow;
+      border-radius: 9px;
+      outline: none;
+      box-shadow: none;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      padding: 0.9rem 1rem 0.9rem 1rem;
+      &:hover {
+        color: $white;
+        background: $yellow;
+        span {
+          &::before {
+            color: $white;
+          }
+        }
+      }
+      span {
+        font-size: 1.6rem;
+        margin-right: 0.2rem;
+        &::before {
+          color: $yellow;
+        }
+      }
+
+      &.badge-btn-green {
+        color: $green;
+        background: transparent;
+        border: 1px solid $green;
+        span.icon-check {
+          font-size: 1.2rem;
+          margin-right: 0.3rem;
+        }
+        span::before {
+          color: $green;
+        }
+        &:hover {
+          color: $white;
+          background: $green;
+          span {
+            &::before {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+    .modal {
+      color: $black;
+      .modal-dialog {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 6rem;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 60rem;
+        &.modal-sm {
+          max-width: 35.2rem;
+        }
+      }
+
+      .modal-body {
+        padding: 4rem;
+        .close-btn {
+          background: transparent;
+          box-shadow: none;
+          position: absolute;
+          right: 1.2rem;
+          top: 1.2rem;
+          transition: all 0.3s;
+          &:hover {
+            transform: scale(1.2);
+          }
+
+          .icon-cross {
+            &::before {
+              color: $black;
+            }
+          }
+        }
+      }
+      .modal-content {
+        box-shadow: 8px 8px 60px rgba(0, 0, 0, 0.8);
+        border-radius: 12px;
+      }
+      .carousel {
+        button {
+          span:before {
+            font-size: 4rem;
+          }
+        }
+        .carousel-inner {
+          padding-bottom: 6rem;
+          .minh-160 {
+            min-height: 16rem;
+          }
+        }
+        .carousel-indicators [data-bs-target] {
+          background-color: $dark;
+          opacity: 0.2;
+          height: 4px;
+          margin-right: 6px;
+          margin-left: 6px;
+          width: 24px;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+        .carousel-control-next,
+        .carousel-control-prev {
+          height: 65%;
+          width: 4rem;
+          > span {
+            color: $grey;
+            background: transparent;
+            font-size: 4rem;
+            &::after {
+              content: '\e922';
+              font-family: 'icomoon';
+            }
+          }
+        }
+        .carousel-control-next {
+          > span {
+            &::after {
+              content: '\e92f';
+              font-family: 'icomoon';
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// General
+.bages {
+  border: 1px solid $yellow;
+  background-color: transparent;
+  box-sizing: border-box;
+  border-radius: 0.9rem;
+  padding: 0.9rem 1.2rem;
+
+  &:hover {
+    color: $white;
+    background-color: $yellow;
+  }
+  &.success {
+    border: 1px solid $green;
+    &:hover {
+      color: $white;
+      background-color: $green;
+    }
+  }
+}
+//table
+
+//modal
+
+//tabs
+
+// Sidebar

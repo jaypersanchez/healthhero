@@ -1,0 +1,52 @@
+If you want to show any icon Please paste the code form the below list as like in font awesome: 
+
+• <span class="icon-share"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-tick"></span>
+• <span class="icon-view"></span>
+• <span class="icon-arrow-high"></span>
+• <span class="icon-arrow-low"></span>
+• <span class="icon-arrow"></span>
+• <span class="icon-caution"></span>
+• <span class="icon-check"></span>
+• <span class="icon-compas"></span>
+• <span class="icon-cross"></span>
+• <span class="icon-discord"></span>
+• <span class="icon-down"></span>
+• <span class="icon-email-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-Ethereum"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span></span>
+• <span class="icon-facebook"></span>
+• <span class="icon-facebook-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-flag"></span>
+• <span class="icon-focus"></span>
+• <span class="icon-go-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-hand"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+• <span class="icon-home"></span>
+• <span class="icon-info"></span>
+• <span class="icon-insta-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-instagram"></span>
+• <span class="icon-key"></span>
+• <span class="icon-left-arrow"></span>
+• <span class="icon-linkedin"></span>
+• <span class="icon-linkedin-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-location"></span>
+• <span class="icon-logout"></span>
+• <span class="icon-messanger-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-messenger"></span>
+• <span class="icon-minus"></span>
+• <span class="icon-navi"></span>
+• <span class="icon-NFT-cross"></span>
+• <span class="icon-plus"></span>
+• <span class="icon-right-arrow"></span>
+• <span class="icon-shop"></span>
+• <span class="icon-success"></span>
+• <span class="icon-tiktok"></span>
+• <span class="icon-tiktok-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-twitter"></span>
+• <span class="icon-twitter-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-twitter-outline"></span>
+• <span class="icon-twitter-outline-fill"><span class="path1"></span><span class="path2"></span></span>
+• <span class="icon-up"></span> 
+• <span class="icon-user"></span>
+• <span class="icon-whatsapp-fill"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+• <span class="icon-youtube"></span>
+• <span class="icon-youtube-fill"><span class="path1"></span><span class="path2"></span></span>

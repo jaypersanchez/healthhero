@@ -1,0 +1,38 @@
+//Colors
+$white          : #ffffff;
+$grey           : #8DA3AC;
+$dark           : #232E33;
+$black          : #06061C;
+$yellow         : #F5DD00;
+$green          : #00C34E;
+$blue           : #4AACD8;
+$darkblue       : #384B7D;
+$ctahover       : #3C98C1;
+$red            : #EA1C25;
+
+// Font Famlily & Sizes
+$inter          : "Inter";
+
+$primary-family : $inter;
+
+$primary-fs     : 1.6rem;
+$secondary-fs   : 1.2rem;
+
+$h1-font-size   : 3.2rem;
+$h2-font-size   : 2.4rem;
+$h3-font-size   : 2rem;
+$h4-font-size   : 1.6rem;
+$h5-font-size   : 1.4rem;
+$h6-font-size   : 1.2rem;
+
+// Media Quries
+$breakpoint-xl: "only screen and (min-width: 1200px) and (max-width:1440px)";
+$breakpoint-lg: "only screen and (min-width:992px) and (max-width:1199px)";
+$breakpoint-lg-only: "only screen and (min-width:1200px)";
+$breakpoint-lg-max: "only screen and (max-width:1199px)";
+$breakpoint-md: "only screen and (min-width:768px) and (max-width:991px)";
+$breakpoint-sm: "only screen and (min-width:576px) and (max-width:767px)";
+$breakpoint-sm-only: "only screen and (max-width:991px)";
+$breakpoint-xs: "only screen and (max-width:767px)";
+$breakpoint-xs-above: "only screen and (min-width:767px)";
+$breakpoint-xxs: "only screen and (max-width: 375px)";
